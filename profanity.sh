@@ -4,7 +4,7 @@
 for word in $1; do
 
     # Convert word to lowercase and remove punctuation
-    lowercase=$(echo $word | tr 'A-Z' 'a-z' | tr -d '[:punct:]')
+    lowercase=$(echo $word | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]')
     
     # Check if the word is in the banned words list
     if grep -Fxq "$lowercase" banned_words.txt
